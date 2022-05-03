@@ -1,10 +1,15 @@
 <script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import Header from './components/Header.vue'
+import Header from './layouts/Header.vue'
+import MainVisual from './layouts/MainVisual.vue'
+import { ref, onMounted } from 'vue'
+/*
+const menuList = Array.from(headings).map(element => {
+  return (element as HTMLElement).innerText
+})
+*/
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <Header msg="制作中" />
+  <Header class="block" pageTitle="engrowth" />
+  <MainVisual />
 </template>

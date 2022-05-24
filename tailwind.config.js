@@ -6,7 +6,10 @@ module.exports = {
   theme: {
     container: {
       center: true,
-      padding: '1rem',
+      padding: {
+        DEFAULT: '1rem',
+        xl: '3rem',
+      },
     },
     extend: {
       fontFamily: {
@@ -14,5 +17,21 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    function ({addComponents}) {
+      addComponents({
+        ".container": {
+          "@screen md": {
+            maxWidth: "100vw",
+          },
+          "@screen lg": {
+            maxWidth: "1024px",
+          },
+          "@screen xl": {
+            maxWidth: "1280px",
+          },
+        },
+      });
+    }
+  ],
 }

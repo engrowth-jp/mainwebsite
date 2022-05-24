@@ -2,6 +2,8 @@
 import Header from './layouts/Header.vue'
 import MainVisual from './layouts/MainVisual.vue'
 import Lead from './layouts/Lead.vue'
+import Services from './layouts/Services.vue'
+import Inquiry from './layouts/Inquiry.vue'
 /*
 const menuList = Array.from(headings).map(element => {
   return (element as HTMLElement).innerText
@@ -13,11 +15,13 @@ const menuList = Array.from(headings).map(element => {
   <Header class="block" pageTitle="engrowth" />
   <MainVisual />
   <Lead />
+  <Services />
+  <Inquiry />
 </template>
 
 <style>
 .container {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 </style>

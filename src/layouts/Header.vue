@@ -27,7 +27,7 @@ const menuList: {link: string, text: string}[] = [
         <h1 class="text-2xl font-bold font-heading">{{ pageTitle }}</h1>
       </div>
 
-      <div class="py-1">
+      <div class="py-1 hidden md:block">
         <nav>
           <ul>
             <li class="inline-block px-5" v-for="menu in menuList"><a :href="menu.link">{{ menu.text }}</a></li>
@@ -36,7 +36,11 @@ const menuList: {link: string, text: string}[] = [
       </div>
 
       <div>
-        <Button text="お問い合わせ" />
+        <Button>
+          <span class="hidden md:inline">お問い合わせ</span>
+          <span class="md:hidden">
+            <img src="/src/assets/images/envelope.svg" alt="お問い合わせ" class=" w-5"></span>
+        </Button>
       </div>
     </div>
   </header>

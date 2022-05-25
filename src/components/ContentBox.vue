@@ -13,7 +13,7 @@ defineProps<{
 <div class="box-wrapper">
     <div box-content>
         <header class="mb-1">
-            <img :src="imagePath + thumbnail" :alt="title" v-if="thumbnail" class="block w-14 ml-auto mr-8" :class="classes">
+            <slot></slot>
             <h3 class="font-bold text-lg">{{ title }}</h3>
         </header>
 

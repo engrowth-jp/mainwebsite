@@ -22,6 +22,10 @@ const services = [
         thumbnail: 'geo',
     },
 ]
+
+const generateImgPath = (fileName: string): string => {
+    return new URL(`../assets/images/services/${fileName}.svg`, import.meta.url).href
+}
 </script>
 
 <template>
@@ -32,7 +36,11 @@ const services = [
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
                     <Box v-for="service in services" :title="service.title" :summary="service.summary"
-                        :slug="service.title" :imagePath="'/src/assets/images/services/'" :thumbnail="service.thumbnail + '.svg'" :classes="'mt-8 md:mt-2'" />
+                        :slug="service.title" imagePath="services/" :thumbnail="service.thumbnail + '.svg'"
+                        :classes="'mt-8 md:mt-2'">
+                        <img :src="generateImgPath(service.thumbnail)"
+                            class="block w-14 ml-auto mr-8">
+                    </Box>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Button from '../components/FormButton.vue'
+import LinkButton from '../components/LinkButton.vue'
 defineProps<{
   pageTitle: string,
 }>()
@@ -38,11 +38,11 @@ const menuList: {link: string, text: string}[] = [
       </div>
 
       <div>
-        <Button>
+        <LinkButton>
           <span class="hidden md:inline">お問い合わせ</span>
           <span class="md:hidden">
             <img src="/src/assets/images/envelope.svg" alt="お問い合わせ" class=" w-5"></span>
-        </Button>
+        </LinkButton>
       </div>
     </div>
   </header>

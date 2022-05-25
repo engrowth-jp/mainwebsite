@@ -24,7 +24,9 @@ const menuList: {link: string, text: string}[] = [
   <header>
     <div id="header" class="relative lg:container flex justify-between items-center px-4 py-3">
       <div class="title">
-        <h1 class="text-2xl font-bold font-heading">{{ pageTitle }}</h1>
+        <h1 class="text-2xl font-bold font-heading">
+          <img src="/src/assets/images/logo.svg" :alt="pageTitle" class="h-8">
+        </h1>
       </div>
 
       <div class="py-1 hidden md:block">

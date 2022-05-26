@@ -4,20 +4,6 @@ defineProps<{
   pageTitle: string,
 }>()
 
-const menuList: {link: string, text: string}[] = [
-  {
-    link: '#services',
-    text: 'サービス'
-  },
-  {
-    link: '#examples',
-    text: '事例'
-  },
-  {
-    link: '#about',
-    text: '会社情報'
-  },
-]
 </script>
 
 <template>
@@ -29,19 +15,12 @@ const menuList: {link: string, text: string}[] = [
         </h1>
       </div>
 
-      <div class="py-1 hidden md:block">
-        <nav>
-          <ul>
-            <li class="inline-block px-5" v-for="menu in menuList"><a :href="menu.link">{{ menu.text }}</a></li>
-          </ul>
-        </nav>
-      </div>
-
       <div>
-        <LinkButton>
+        <LinkButton class="block">
           <span class="hidden md:inline">お問い合わせ</span>
           <span class="md:hidden">
-            <img src="/src/assets/images/envelope.svg" alt="お問い合わせ" class=" w-5"></span>
+            <img src="/src/assets/images/envelope.svg" alt="お問い合わせ" class="w-5">
+          </span>
         </LinkButton>
       </div>
     </div>

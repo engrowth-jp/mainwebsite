@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <header>
+  <header class="sticky top-0 bg-[rgba(255,255,255,0.8)]">
     <div id="header" class="relative lg:container flex justify-between items-center px-4 py-3">
       <div class="title">
         <h1 class="text-2xl font-bold font-heading">

@@ -5,6 +5,7 @@ import Lead from './layouts/Lead.vue'
 import Services from './layouts/Services.vue'
 import Message from './layouts/Message.vue'
 import About from './layouts/About.vue'
+import Footer from './layouts/Footer.vue'
 /*
 const menuList = Array.from(headings).map(element => {
   return (element as HTMLElement).innerText
@@ -19,6 +20,7 @@ const menuList = Array.from(headings).map(element => {
   <Services />
   <Message />
   <About />
+  <Footer />
 </template>
 
 <style>

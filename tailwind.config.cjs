@@ -1,15 +1,13 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./index.html",
-    "./src/**/*.{vue,js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
     container: {
       center: true,
       padding: {
-        DEFAULT: '1rem',
-        sm: '2rem',
-        '2xl': '0',
+        DEFAULT: "1rem",
+        sm: "2rem",
+        "2xl": "0",
       },
     },
     extend: {
@@ -19,7 +17,7 @@ module.exports = {
     },
   },
   plugins: [
-    function ({addComponents}) {
+    function ({ addComponents }) {
       addComponents({
         ".container": {
           "@screen md": {
@@ -33,6 +31,6 @@ module.exports = {
           },
         },
       });
-    }
+    },
   ],
-}
+};

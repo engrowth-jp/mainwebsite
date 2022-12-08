@@ -1,0 +1,180 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/Heading.astro";
+import Box from "../components/Box.astro";
+
+const menuList: { link: string; text: string }[] = [
+  {
+    link: "#services",
+    text: "サービス",
+  },
+  {
+    link: "#examples",
+    text: "事例",
+  },
+  {
+    link: "#about",
+    text: "会社情報",
+  },
+];
+
+const services = [
+  {
+    title: "システム開発",
+    slug: "devlop",
+    summary:
+      "事業を進める上でアプリケーションの活用は重要です。既存のサービスで自社の事業に最適なアプリが見つからない、もっと細かいところを最適化したいといったご要望にお答えします。",
+    thumbnail: "code",
+  },
+  {
+    title: "ウェブ制作",
+    slug: "web",
+    summary:
+      "現在、ホームページを作成するならば簡単で無料、もしくは低価格で作成できるサービスはあります。しかし、本当に大切なのは中身です。どのような内容を掲載するか迷っているならばご相談ください。",
+    thumbnail: "site",
+  },
+  {
+    title: "Google Maps対策",
+    slug: "meo",
+    summary:
+      "店舗をお持ちの事業者様にとって欠かせないのがGoogle Maps対策です。現在多くの方がGoogle Mapsを使って目的地を探しています。対策をしっかりと行い、機会損失を減らしていきましょう。",
+    thumbnail: "geo",
+  },
+];
+
+const about = [
+  {
+    title: "社名",
+    content: "株式会社engrowth",
+  },
+  {
+    title: "設立",
+    content: "2020年2月",
+  },
+  {
+    title: "代表者",
+    content: "松井真吾",
+  },
+  {
+    title: "資本金",
+    content: "30万円",
+  },
+  {
+    title: "事業内容",
+    content: "ソフトウェア開発、ホームページ制作、Google Maps対策",
+  },
+  {
+    title: "取引銀行",
+    content: "青和信用組合",
+  },
+];
+---
+
+<Layout title="株式会社engrowth">
+  <main>
+    <div
+      class="main-visual md:container bg-cover bg-bottom bg-[rgba(0,0,0,0.3)] bg-blend-darken h-[60vh] min-h-[360px] md:min-h-[640px] 2xl:min-h-[800px] flex justify-center items-center"
+    >
+      <div class="text-white">
+        <h2 class="font-heading text-4xl text-center mb-14">
+          個人規模からの<br class="sm:hidden" />システム開発
+        </h2>
+        <nav>
+          <div class="py-1">
+            <ul class="flex justify-center additionalClass">
+              {
+                menuList.map((menu) => (
+                  <li class="px-5 sm:px-8">
+                    <a href={menu.link} class="hover:border-b-[2px] py-3">
+                      {menu.text}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div id="lead" class="lead">
+      <div class="container">
+        <div class="lead-content">
+          <Heading
+            subscript="MISSION"
+            heading="事業の成長を円滑にするための提案を"
+          >
+            世の中の情報活用、管理の常識は日々変化しています。世の中の変化に取り残されるということは、競争力を落とすこととほぼ同等と言えるでしょう。関わっていただいた企業様が常に成長していただけるよう、IT分野で手助けしたいと思い、日々活動しています。
+          </Heading>
+        </div>
+      </div>
+    </div>
+
+    <div id="services" class="services">
+      <div class="container">
+        <div class="services-box">
+          <Heading
+            subscript="SERVICES"
+            heading="企業を多角的にサポートするサービス"
+          />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+            {
+              services.map((service) => (
+                <Box
+                  title={service.title}
+                  summary={service.summary}
+                  slug={service.title}
+                  classes="'mt-8 md:mt-2'"
+                >
+                  <img
+                    src={`/images/services/${service.thumbnail}.svg`}
+                    class="block w-14 ml-auto mr-4 mb-2"
+                  />
+                </Box>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="message container sm:flex sm:justify-center">
+      <div
+        class="left sm:w-5/12 sm:flex sm:justify-end sm:items-center sm:pr-10"
+      >
+        <Heading subscript="SMALL START" heading="小さなことから始めましょう" />
+      </div>
+      <div class="right sm:w-7/12 sm:pl-10 sm:border-l-2">
+        <p>
+          システム開発と聞くと数百万円の予算を想像するかもしれません。しかし、改善はもっと小さなことからできるのです。一行のプログラムで作業効率が100倍になることもあります。日々の「めんどくさい」を片付けることで、事業の生産性を向上することができるのです。
+        </p>
+      </div>
+    </div>
+
+    <div id="about" class="about container">
+      <Heading heading="企業概要" subscript="ABOUT" />
+
+      <table class="w-full sm:text-lg border-collapse">
+        {
+          about.map((item) => (
+            <tr class="index % 2 != 0 ? 'bg-gray-100' : ''">
+              <td class="w-36 pl-4 py-3 align-middle border border-slate-300">
+                {item.title}
+              </td>
+              <td class="w-max px-4 align-middle border border-slate-300">
+                {item.content}
+              </td>
+            </tr>
+          ))
+        }
+      </table>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .main-visual {
+    background-image: url(../assets/images/keyvisual.png);
+  }
+</style>

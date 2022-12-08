@@ -1,0 +1,18 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/NameCard.astro";
+import InlineButton from "../components/InlineButton.astro";
+---
+
+<Layout title="松井真吾 | 株式会社engrowth">
+	<Card
+		name="松井 真吾"
+		role="代表取締役社長"
+		slug="shingo.matsui"
+		duties={["プログラマ", "ウェブデザイン", "写真撮影", "映像制作"]}
+	/>
+
+	<div class="text-center">
+		<InlineButton href={"/"}>企業トップへ</InlineButton>
+	</div>
+</Layout>

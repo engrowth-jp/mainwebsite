@@ -1,0 +1,25 @@
+---
+export interface Props {
+	name: string;
+	slug: string;
+	role: string;
+	duties: Array<string>;
+}
+
+const { name, slug, role, duties } = Astro.props;
+const duitesText = duties.join('、');
+---
+
+<div class="container flex justify-center gap-8 flex-col md:flex-row">
+	<div class="md:w-[20%]">
+		<img src={`/images/profiles/${slug}.jpg`} alt="" />
+	</div>
+
+	<div class="md:w-[40%]">
+		<ul>
+			<li title="名前" class="text-4xl">{name}</li>
+			{role && <li title="役職">{role}</li>}
+			<li title="職務" class="text-xl mt-2">{duitesText}</li>
+		</ul>
+	</div>
+</div>

@@ -1,26 +1,26 @@
 ---
 export interface Props {
-  title: string;
-  slug: string;
-  summary: string;
-  classes?: string;
-  imagePath?: string;
+	title: string;
+	slug: string;
+	summary: string;
+	classes?: string;
+	imagePath?: string;
 }
 
 const { title, slug, summary, classes, imagePath } = Astro.props;
 ---
 
 <div class="box-wrapper">
-  <div box-content>
-    <header class="mb-1 flex justify-between items-end">
-      <h3 class="font-bold text-lg">{title}</h3>
-      <div>
-        <slot />
-      </div>
-    </header>
+	<div box-content>
+		<header class="mb-1 flex justify-between items-end">
+			<h3 class="font-bold text-lg">{title}</h3>
+			<div>
+				<slot />
+			</div>
+		</header>
 
-    <section>
-      {summary}
-    </section>
-  </div>
+		<section>
+			{summary}
+		</section>
+	</div>
 </div>

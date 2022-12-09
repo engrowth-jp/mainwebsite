@@ -1,4 +1,6 @@
 ---
+import InlineButton from './InlineButton.astro';
+
 export interface Props {
 	name: string;
 	slug: string;
@@ -7,7 +9,7 @@ export interface Props {
 }
 
 const { name, slug, role, duties } = Astro.props;
-const duitesText = duties.join('、');
+const duitesText = duties.join("、");
 ---
 
 <div class="container flex justify-center gap-8 flex-col md:flex-row">
@@ -22,4 +24,8 @@ const duitesText = duties.join('、');
 			<li title="職務" class="text-xl mt-2">{duitesText}</li>
 		</ul>
 	</div>
+</div>
+
+<div class="text-center mb-8">
+	<InlineButton href={"/"}>企業トップへ</InlineButton>
 </div>

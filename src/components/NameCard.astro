@@ -1,14 +1,15 @@
 ---
-import InlineButton from './InlineButton.astro';
+import InlineButton from "./InlineButton.astro";
 
 export interface Props {
 	name: string;
+	kana: string;
 	slug: string;
 	role: string;
 	duties: Array<string>;
 }
 
-const { name, slug, role, duties } = Astro.props;
+const { name, kana, slug, role, duties } = Astro.props;
 const duitesText = duties.join("、");
 ---
 
@@ -19,7 +20,7 @@ const duitesText = duties.join("、");
 
 	<div class="md:w-[40%]">
 		<ul>
-			<li title="名前" class="text-4xl">{name}</li>
+			<li title="名前" class="text-4xl"><ruby>{name}<rt>{kana}</rt></ruby></li>
 			{role && <li title="役職">{role}</li>}
 			<li title="職務" class="text-xl mt-2">{duitesText}</li>
 		</ul>

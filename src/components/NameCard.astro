@@ -12,21 +12,16 @@ export interface Props {
 const { name, kana, slug, role, duties } = Astro.props;
 const duitesText = duties.join("、");
 ---
-
 <div class="container flex justify-center gap-8 flex-col md:flex-row">
-	<div class="md:w-[20%]">
+	<div class="md:w-1/3">
 		<img src={`/images/profiles/${slug}.jpg`} alt="" />
 	</div>
 
-	<div class="md:w-[40%]">
+	<div class="md:w-2/3">
 		<ul>
 			<li title="名前" class="text-4xl"><ruby>{name}<rt>{kana}</rt></ruby></li>
 			{role && <li title="役職">{role}</li>}
 			<li title="職務" class="text-xl mt-2">{duitesText}</li>
 		</ul>
 	</div>
-</div>
-
-<div class="text-center mb-8">
-	<InlineButton href={"/"}>企業トップへ</InlineButton>
 </div>

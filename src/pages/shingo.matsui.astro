@@ -1,7 +1,24 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/LayoutProfile.astro";
 import Card from "../components/NameCard.astro";
-import InlineButton from "../components/InlineButton.astro";
+import Work from "../components/Work.astro";
+
+const works = [
+	{
+		title: "鎌ケ谷青年会議所 １１月例会 メタバース講座",
+		imageName: "metaverse-lecture.png",
+		description:
+			"鎌ケ谷青年会議所主催の１１月例会にてメタバース講座を実施。\nメタバースの現状から未来の展望についての講義、およびメタバースアプリ”Cluster”の体験会を行った。",
+		skills: ['メタバース'],
+	},
+	{
+		title: "西野亮廣講演会 一覧ウェブサイトの構築",
+		imageName: "nishino-kouenkai.png",
+		description:
+			"西野亮廣講演会一覧サイトの制作、運用管理。\nフロントエンドをVue.js、バックエンドをLaravel（PHP フレームワーク）で制作。\nデータの管理をGoogle Spreadsheetで行い、Google Apps Scriptによりデータ成形後、Laravelで制作したAPIで受け取り、表示する仕組みを採用。\nまた、掲載に必要な費用を請求するシステムをStripe（https://stripe.com/jp）で作成。",
+		skills: ["HTML", "CSS", "JavaScript", "Vue","Tailwind CSS", "Laravel", "Google Apps Script"],
+	},
+];
 ---
 
 <Layout title="松井真吾 | 株式会社engrowth">
@@ -12,4 +29,6 @@ import InlineButton from "../components/InlineButton.astro";
 		slug="shingo.matsui"
 		duties={["プログラマ", "ウェブデザイン", "写真撮影", "映像制作"]}
 	/>
+
+	<Work works={works} name="shingo.matsui" />
 </Layout>

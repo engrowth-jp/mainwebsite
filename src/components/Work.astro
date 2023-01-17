@@ -6,6 +6,7 @@ export interface Props {
 		description: string;
 		imageName: string;
 		skills: Array<string>;
+		links?: Array<{ title: string; url: string }>;
 	}>;
 }
 
@@ -30,9 +31,28 @@ const { name, works } = Astro.props;
 					</section>
 
 					<section class="mb-4">
-						<p class="font-bold">{work.skills.length !== 0 ? '関連技術' : ''}</p>
+						<p class="font-bold">
+							{work.skills.length !== 0 ? "関連技術" : ""}
+						</p>
 						<p>{work.skills.join("、")}</p>
 					</section>
+
+					{work.links && (
+						<section class="links">
+							<header>
+								<p class="font-bold">関連リンク</p>
+							</header>
+							<ul>
+								{work.links.map((link) => (
+									<li>
+										<a href={link.url} title={link.title} class="text-blue-800 hover:text-blue-400">
+											{link.title}
+										</a>
+									</li>
+								))}
+							</ul>
+						</section>
+					)}
 				</div>
 
 				<div class="sm:w-1/3 sm:pl-6">

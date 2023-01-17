@@ -57,7 +57,7 @@ const { name, works } = Astro.props;
 
 				<div class="sm:w-1/3 sm:pl-6">
 					<section>
-						<img src={`/images/${name}/${work.imageName}`} alt="" />
+						{work.imageName && <img src={`/images/${name}/${work.imageName}`} alt="" />}
 					</section>
 				</div>
 			</div>

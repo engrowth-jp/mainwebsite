@@ -45,7 +45,7 @@ const { name, works } = Astro.props;
 							<ul>
 								{work.links.map((link) => (
 									<li>
-										<a href={link.url} title={link.title} class="text-blue-800 hover:text-blue-400">
+										<a href={link.url} title={link.title} target="_blank" class="text-blue-800 hover:text-blue-400">
 											{link.title}
 										</a>
 									</li>
